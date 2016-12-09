@@ -20,9 +20,9 @@ npm install
 - Made with love, modern tools and some coffee :)
 
 ## Demo Project A
-> [Live Demo Project A](pauleoasesores.com/wh/demoA/)
+> [Live Demo Project A](http://pauleoasesores.com/wh/demoA/index.html)
 
 ## Demo Project B
-> [Live Demo Project B](pauleoasesores.com/wh/demoB/dist/)
+> [Live Demo Project B](http://pauleoasesores.com/wh/demoB/index.html)
 
 In both demonstrations no cache system was used.
