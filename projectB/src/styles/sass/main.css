@@ -1,0 +1,105 @@
+/* line 11, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+.noBullets {
+  list-style: none; }
+
+/* line 15, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+.hidden {
+  display: none; }
+
+/* line 19, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+#app {
+  background-color: #fff;
+  overflow: hidden;
+  height: 1500px; }
+
+/* line 25, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+#sidenav {
+  background-color: #0e2a36;
+  float: left;
+  width: 15%;
+  min-width: 300px;
+  height: 100%; }
+  /* line 32, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+  #sidenav > ul {
+    list-style: none;
+    padding: 100px 0px; }
+    /* line 36, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+    #sidenav > ul > li:hover {
+      background-color: #00b988; }
+      /* line 39, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+      #sidenav > ul > li:hover > a {
+        color: #0e2a36; }
+  /* line 45, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+  #sidenav li {
+    line-height: 40px; }
+  /* line 49, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+  #sidenav > ul > li > ul {
+    list-style: none !important; }
+    /* line 52, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+    #sidenav > ul > li > ul > li {
+      padding-left: 20px; }
+      /* line 54, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+      #sidenav > ul > li > ul > li:hover {
+        background-color: #3affcb; }
+        /* line 57, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+        #sidenav > ul > li > ul > li:hover > a {
+          color: #0e2a36; }
+  /* line 64, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+  #sidenav a {
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 40px;
+    text-decoration: none; }
+  /* line 74, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+  #sidenav > ul > li > a:before {
+    content: "> ";
+    margin-right: 10px; }
+  /* line 79, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+  #sidenav > ul > li > a.open:before {
+    content: " V"; }
+
+/* line 87, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+#main {
+  float: left;
+  width: 84%;
+  color: #000; }
+
+/* line 95, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+#container {
+  padding: 20px; }
+
+/* line 101, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+#contentPage {
+  background-color: #dde4f0;
+  padding: 20px;
+  margin-top: 20px;
+  height: 1500px;
+  width: 98%;
+  display: auto;
+  font: 1.3em Calibri, Helvetica, Arial, sans-serif; }
+
+/* line 113, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+h1 {
+  font: 1.3em Calibri, Helvetica, Arial, sans-serif;
+  font-size: 3em;
+  width: 33%;
+  color: #0e2a36;
+  margin-bottom: 40px; }
+
+/* line 123, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+.btn {
+  background-color: #e74c3c;
+  border: 0 none;
+  color: #fff;
+  font-size: 1em;
+  padding: 20px;
+  width: 250px;
+  border-radius: 5px;
+  cursor: pointer; }
+  /* line 133, C:/xampp/htdocs/whTest/projectB/src/styles/sass/main.scss */
+  .btn:hover {
+    background-color: #c0392b;
+    font-weight: bold; }
+
+/*# sourceMappingURL=main.css.map */

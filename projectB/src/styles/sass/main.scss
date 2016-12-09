@@ -1,0 +1,146 @@
+// Colors
+$bgSidenav: #0e2a36;
+$bgItemHover: #00b988;
+
+
+// Fonts
+$fontcontentPage: 1.3em Calibri, Helvetica, Arial, sans-serif;
+
+
+// Atomics
+.noBullets {
+   list-style: none;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    height: 100%;
+    line-height: 1;
+}
+
+#app {
+    background-color: #0e2a36;
+    height: 100%;
+    overflow: hidden;
+}
+
+#sidenav {
+    background-color: $bgSidenav;
+    bottom: 0;
+    left: 0;
+    min-width: 300px;
+    position: absolute;
+    top: 0;
+    width: 100px;
+
+    a {
+        color: #ffffff;
+        display: block;
+        font-family: sans-serif;
+        font-size: 18px;
+        line-height: 40px;
+        padding: 15px;
+        text-decoration: none;
+    }
+
+    & > ul {
+        display: block;
+        height: 100%;
+        list-style: outside none none;
+        overflow: auto;
+
+        & > li {
+            &:first-child {
+                padding-top: 100px;
+            }
+
+            & > a {
+                &:before {
+                  content: "▶ ";
+                  margin-right: 10px;
+                }
+
+                &.open:before {
+                  content: " ▼";
+                }
+
+                &:hover, &.open {
+                    background-color: darken( $bgItemHover, 5% );
+                    color: $bgSidenav;
+
+                    & ~ ul {
+                        background-color: $bgItemHover;
+
+                        a {
+                            color: $bgSidenav;
+                        }
+                    }
+                }
+            }
+
+            & > ul {
+                list-style: none !important;
+
+                & > li {
+                    & > a {
+                        color: #ccc;
+                        padding-left: 50px;
+
+                        &:hover {
+                            background-color: lighten( $bgItemHover, 25% );
+                            color: $bgSidenav;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#main {
+    background-color: #ffffff;
+    height: 100%;
+    margin-left: 300px;
+    width: 100%;
+}
+
+#container {
+    padding: 20px;
+}
+
+#contentPage {
+    background-color: #dde4f0;
+    display: auto;
+    font: $fontcontentPage;
+    height: 300px;
+    margin-top: 20px;
+    padding: 20px;
+    width: calc(100% - 350px);
+}
+
+h1 {
+    color: $bgSidenav;
+    font: $fontcontentPage;
+    font-size: 48px !important;
+    margin-bottom: 40px;
+    width: 33%;
+}
+
+.btn {
+    background-color: #e74c3c;
+    border-radius: 5px;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 20px;
+    width: 250px;
+
+    &:hover {
+        background-color: #c0392b;
+        font-weight: bold;
+    }
+}

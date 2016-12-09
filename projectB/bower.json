@@ -1,0 +1,21 @@
+{
+  "name": "WHTest",
+  "description": "...",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Fernando Jimenez <fejipe121@hotmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.12"
+  }
+}

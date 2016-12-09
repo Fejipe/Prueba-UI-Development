@@ -1,0 +1,12 @@
+/* TEAM */
+    Developer: Fernando Jiménez
+    Contact: fejipe121@hotmail.com
+
+    From: La Línea, Spain
+
+/* SITE */
+    Last big update: 2016/12/7
+    Language: English
+    Doctype: HTML5
+    IDE: Sublime Text
+    Built with: HTML5, CSS3

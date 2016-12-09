@@ -1,0 +1,69 @@
+@import "variables";
+
+.btn {
+    cursor: pointer;
+}
+
+.btn.btnClean {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0 none;
+}
+
+.noBullets {
+	list-style: none;
+}
+
+.noUnderline {
+	text-decoration: none;
+}
+
+.noBorders {
+    border: 0px;
+}
+
+.noMargins {
+    margin: 0;
+}
+
+.noPaddings {
+    padding: 0;
+}
+
+.center {
+	text-align: center;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.p10 {
+	padding: 10px;
+}
+
+.overflow {
+	overflow: hidden;
+}
+
+.f_white {
+	color: #fff;
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
+}
+
+.show, .show--xs {
+	display: block;
+	visibility: visible;
+}
+
+@media (min-width: $tablet) {
+	.show--xs {
+		display: none;
+		visibility: hidden;
+	}
+}

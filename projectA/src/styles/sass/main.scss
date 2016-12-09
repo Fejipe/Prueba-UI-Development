@@ -1,0 +1,357 @@
+@import "../../../bower_components/susy/sass/susy";
+@import "variables";
+@import "mixins";
+@import "helpers";
+
+/**
+ * Main styles
+ */
+#main {
+	background-color: #1ABC9C;
+
+	.brand {
+		@extend .center;
+
+		height: $headerHeight;
+	}
+
+	#header {
+        background-color: $bgHeader;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+
+		.navBar {
+			height: $headerHeight;
+		}
+
+        button#menu-toggle > img {
+            height: 45px;
+        }
+
+		#mainNavigation {
+			background-color: $bgMainNavigation;
+            font: $fontMainNavigation;
+
+            ul {
+                @extend .noPaddings;
+
+                & > li.menu__itemMenu {
+                    height: $headerHeight;
+                    width: 20%;
+
+                    &:hover {
+                      background-color: lighten( $bgMainNavigation, 12% )
+                    }
+
+                    span {
+                        @extend .ellipsis;
+
+                        display: block;
+                        line-height: $headerHeight;
+                    }
+
+                    & > a {
+                        display: block;
+                        height: $headerHeight;
+                    }
+                }
+            }
+		}
+
+		#subNavigation {
+            font: $fontHeader;
+            ul {
+                @extend .noPaddings;
+
+                li.menu__itemMenu {
+                    height: $headerHeight;
+
+                    &:hover {
+                        background-color: lighten( $bgHeader, 5% )
+                    }
+
+                    a {
+                        display: block;
+                        height: $headerHeight;
+                        line-height: $headerHeight;
+                    }
+                }
+            }
+		}
+	}
+
+	#content {
+		@extend .center;
+
+        background-color: $bgContent;
+        position: relative;
+        top: $headerHeight;
+        transition: transform 0.3s ease 0s;
+
+		@media (min-width: $tablet) {
+			top: $headerHeight * 2;
+		}
+	}
+
+	#footer {
+        background-color: $bgFooter;
+        font: $fontFooter;
+        text-align: right;
+	}
+}
+
+.menu {
+	@extend .p10;
+	@extend .noBullets;
+
+	.menu__itemMenu {
+        @extend .center;
+        @extend .noBorders;
+        @extend .noMargins;
+        @extend .noPaddings;
+        @extend .center;
+
+		a {
+			@extend .f_white;
+			@extend .noUnderline;
+            &:hover {
+                font-weight: bold;
+            }
+		}
+	}
+}
+
+.contentBody {
+    padding-top: 40px;
+    background-color: $bgcontentBody;
+
+	.col {
+		width: 33%;
+	}
+}
+
+/**
+ * Gallery (components)
+ */
+.gallery {
+	@extend %clearfix;
+    margin: 0;
+}
+
+.gallery__item {
+	@include gallery( 6 );
+	@extend .noBullets;
+
+    background-color: #dde4f0;
+    height: auto;
+    margin-bottom: gutter();
+    max-height: 90vw;
+
+  	&:nth-last-child(-n+2) {
+    	margin-bottom: 0;
+  	}
+
+  	@media (min-width: $tablet) {
+    	@include gallery(4);
+    	max-height: 50vw;
+
+    	&:nth-last-child(-n+3) {
+      		margin-bottom: 0;
+    	}
+  	}
+
+  	@media (min-width: $desktop) {
+    	@include gallery(3);
+
+    	&:nth-last-child(-n+4) {
+      		margin-bottom: 0;
+    	}
+  	}
+
+  	img {
+		height: auto;
+    	width: 100%;
+  	}
+}
+
+/**
+ * Offcanvas
+ */
+$off-canvas-width-2: 300px;
+
+.container {
+	overflow: hidden;
+}
+
+.transformer {
+    backface-visibility: hidden;
+    transition: transform 0.3s ease 0s;
+
+    &.is-open {
+	    @media (max-width: $tablet) {
+            position: fixed;
+
+            .off-canvas {
+                left: 0;
+            }
+
+            #main #content {
+    	    	top: 0;
+
+    	    	.contentBody {
+    	    		padding-top: 40px + $headerHeight;
+    	    	}
+    	    }
+
+            &:after {
+                background-color: rgba(0, 0, 0, 0.6);
+                bottom: 0;
+                content: "";
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 3;
+            }
+        }
+	}
+}
+
+.left {
+    bottom: 0;
+    left: -$off-canvas-width-2;
+    position: absolute;
+    top: 0;
+    width: $off-canvas-width-2;
+}
+
+.main {
+    @include container;
+
+    padding-left: gutter();
+    padding-right: gutter();
+}
+
+.off-canvas {
+    background: $bgMainNavigation none repeat scroll 0 0;
+    font: $fontHeader;
+    height: 100%;
+    left: -300px;
+    position: absolute;
+    top: 0;
+    transition: all 0.3s ease 0s;
+    width: 300px;
+    z-index: 10;
+
+    & > div {
+        height: 100vh;
+        overflow: scroll;
+        width: 300px;
+    }
+
+    div.close {
+        img.close-btn {
+            height: 35px;
+            margin: 0 auto;
+            padding: 10px 0;
+            width: 35px;
+        }
+    }
+
+    ul > li:hover {
+         background-color: lighten( $bgMainNavigation, 12% );
+    }
+
+    ul.menu {
+        @extend .noPaddings;
+
+        background-color: lighten( $bgMainNavigation, 3% );
+        margin-top: 30px;
+
+        li:hover {
+             background-color: lighten( $bgMainNavigation, 45% );
+        }
+    }
+
+    a {
+	    @extend .f_white;
+
+        display: block;
+        opacity: 0.7;
+        padding: 1em 1.5em;
+        text-decoration: none;
+        transition: all 0.3s ease 0s;
+        border-bottom: 1px solid #dddddd;
+	}
+}
+
+.close {
+    border-bottom: 1px solid #dddddd;
+    padding-left: 1.5em;
+
+    .close-btn {
+        cursor: pointer;
+        display: block;
+        height: 1.5em;
+        margin-bottom: 1.75em;
+        margin-top: 1.75em;
+        opacity: 0.7;
+        transition: all 0.2s ease 0s;
+	}
+}
+
+/**
+ * Text cols
+ */
+.contentBody__col {
+    @include gallery(12);
+    background-color: $bgContent;
+    clear: both !important;
+    font: $fontcontentBody;
+    margin-bottom: gutter();
+    text-align: justify;
+
+    > div > h2 {
+        @extend .center;
+        color: $contentH1;
+        font: $fontcontentBodyH2;
+    }
+
+    @media (min-width: $tablet) {
+        clear: none !important;
+        @include gallery(4);
+
+        &:nth-last-child(-n+3) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/**
+ * Navigation
+ */
+.navigation {
+	display: none;
+
+	@media (min-width: $tablet) {
+		display: block;
+	}
+}
+
+#mainNavigation {
+	.menu {
+		.menu__itemMenu {
+			@include gallery(2.4);
+		}
+	}
+}
+
+#subNavigation {
+	.menu {
+		.menu__itemMenu {
+			@include gallery(1.5);
+		}
+	}
+}

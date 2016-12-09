@@ -1,0 +1,28 @@
+// Breakpoints
+$appSize: 1280px;
+$headerHeight: 50px;
+$tablet: 40rem; // 640px
+$desktop: 64rem; // 1024px
+
+// Colors
+$bgHeader: #14A699;
+$bgMainNavigation: #14202e;
+$bgContent: #fff;
+$bgcontentBody: #fff;
+$bgFooter: #080C12;
+$contentH1: #e84e3d;
+
+// Fonts
+$fontHeader: normal 1.1em Roboto, Helvetica, Arial, sans-serif;
+$fontMainNavigation: normal 1.2em Roboto,Helvetica,Arial,sans-serif;
+$fontcontentBody: normal 1.1em Calibri, Helvetica, Arial, sans-serif;
+$fontcontentBodyH2: 600 1.15em Calibri, Helvetica, Arial, sans-serif;
+$fontFooter: normal 1.1em Roboto, Helvetica, Arial, sans-serif;
+
+// Susy inits
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  container: 71.25rem,
+  global-box-sizing: border-box,
+);
